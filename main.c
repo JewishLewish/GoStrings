@@ -1,4 +1,4 @@
-#include "gostrings.c"
+#include "gostrings.h"
 
 int main() {
     char str[] = "hello       world";
