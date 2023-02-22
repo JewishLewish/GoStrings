@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 //The following functions are designed to be very similiar to Go Lang's functions
 //https://pkg.go.dev/strings
@@ -124,4 +125,11 @@ char* join(const char** strings, const char* delimiter) {
     }
     
     return result;
+}
+
+bool contains(const char* str, const char* substr) {
+    if (strstr(str, substr) != NULL) {
+        return true;
+    }
+    return false;
 }
