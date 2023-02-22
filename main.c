@@ -1,16 +1,15 @@
 #include "gostrings.h"
 
+
 int main() {
-    char str[] = "hello       world";
-    int count = 0;
+    const char *words[] = {"Hello ", "world", "!"};
+    const char *sep = "";
 
-    char **result = fields(str, &count);
-
-    for (int i = 0; i < count; i++) {
-        printf("%s\n", result[i]);
-        free(result[i]);
+    char *result = join(words, 3, sep);
+    if (result != NULL) {
+        printf("%s\n", result); // prints "Hello, world, !"
+        free(result);
     }
-    free(result);
 
     return 0;
 }
