@@ -154,10 +154,20 @@ bool has_suffix(const char* str, const char* suffix) {
 }
 
 //Index
-int go_index(char* str, char* substr) {
+int index_of(char* str, char* substr) {
     char* p = strstr(str, substr);
     if (p == NULL) {
         return -1;
     }
     return p - str;
+}
+
+int last_index_of(char* str, char* substr) {
+    char* p = strstr(str, substr);
+    int last_index = -1;
+    while (p != NULL) {
+        last_index = p - str;
+        p = strstr(p + 1, substr);
+    }
+    return last_index;
 }
