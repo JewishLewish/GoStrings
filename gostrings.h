@@ -66,21 +66,21 @@ char* replaceall(char *str, const char *old, const char *new) {
     return str;
 }
 
-int equalFold(const char *s1, const char *s2) {
+bool equalFold(const char *s1, const char *s2) {
     size_t s1_len = strlen(s1);
     size_t s2_len = strlen(s2);
 
     if (s1_len != s2_len) {
-        return 0;
+        return false;
     }
 
     for (size_t i = 0; i < s1_len; i++) {
         if (tolower(s1[i]) != tolower(s2[i])) {
-            return 0;
+            return false;
         }
     }
 
-    return 1;
+    return true;
 }
 
 int go_count(const char *s, const char *substr) {
