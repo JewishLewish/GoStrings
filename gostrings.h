@@ -62,6 +62,7 @@ char* replaceall(char *str, const char *old, const char *new) {
         memcpy(p, new, new_len);
         p = strstr(p + new_len, old);
     }
+    free(p);
     return str;
 }
 
