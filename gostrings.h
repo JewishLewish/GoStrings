@@ -3,6 +3,11 @@
 #include <string.h>
 #include <ctype.h>
 
+//The following functions are designed to be very similiar to Go Lang's functions
+//https://pkg.go.dev/strings
+
+//Go Lang's "Split" Function
+//"Hello, World" -> "{Hello, World}"
 char **split(char *str, const char *delim, int *count) {
     char **result = NULL;
     char *token = strtok(str, delim);
@@ -19,6 +24,9 @@ char **split(char *str, const char *delim, int *count) {
     return result;
 }
 
+//Go Lang's "Fields" Function
+//Similiar to Split however it uses Whitespace as a form to split text
+//"Hello        world" -> {"Hello", "world"}
 char **fields(char *str, int *count) {
     char **result = NULL;
     char *token = strtok(str, " \t\n\r\f\v");
@@ -34,6 +42,15 @@ char **fields(char *str, int *count) {
 
     return result;
 }
+
+
+//replaceall replaces all substrings with a certain string
+
+//      char str[] = "Hello World, World!";
+//      const char old[] = "World";
+//      const char new[] = "Earth";
+//      replaceall(str, old, new);
+//      printf("%s\n", str); // prints "Hello Earth, Earth!"
 
 char* replaceall(char *str, const char *old, const char *new) {
     char *p = strstr(str, old);
@@ -73,34 +90,4 @@ int go_count(const char *s, const char *substr) {
     }
 
     return count;
-}
-
-char *join(const char **s, int n, const char *sep) {
-    if (n <= 0) {
-        return NULL;
-    }
-
-    // calculate the total length of the joined string
-    int sep_len = strlen(sep);
-    int len = strlen(s[0]);
-    for (int i = 1; i < n; i++) {
-        len += sep_len + strlen(s[i]);
-    }
-
-    // allocate memory for the joined string
-    char *result = (char *) malloc(len + 1);
-    if (result == NULL) {
-        return NULL;
-    }
-
-    // copy the first element
-    strcpy(result, s[0]);
-
-    // concatenate the remaining elements with the separator
-    for (int i = 1; i < n; i++) {
-        strcat(result, sep);
-        strcat(result, s[i]);
-    }
-
-    return result;
 }

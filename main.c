@@ -3,9 +3,9 @@
 
 int main() {
     const char *words[] = {"Hello ", "world", "!"};
-    const char *sep = "";
 
-    char *result = join(words, 3, sep);
+
+    char *result = join(words, 3, "");
     if (result != NULL) {
         printf("%s\n", result); // prints "Hello, world, !"
         free(result);
