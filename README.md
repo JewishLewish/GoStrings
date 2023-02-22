@@ -1,2 +1,45 @@
 # GoStrings
 C package designed to be similar to GO's strings library
+
+## Progress
+| Syntax | Description | Progress |
+| --- | --- | :---: |
+| Clone | Returns a Fresh Copy of a Certain String | :x: |
+| Compare | Compare returns an integer comparing two strings lexicographically. The result will be 0 if a == b, -1 if a < b, and +1 if a > b. | :x: |
+| Contains | Contains reports whether substr is within s. | :x: |
+| ContainsAny| ContainsAny reports whether any Unicode code points in chars are within s.| :x: |
+| ContainsRunes | ContainsRune reports whether the Unicode code point r is within s. | :x: |
+| Count | Count counts the number of non-overlapping instances of substr in s. If substr is an empty string, Count returns 1 + the number of Unicode code points in s.| ✔️ |
+| Cut | Cut slices s around the first instance of sep, returning the text before and after sep. The found result reports whether sep appears in s. If sep does not appear in s, cut returns s, "", false. | :x: |
+| CutPrefix | CutPrefix returns s without the provided leading prefix string and reports whether it found the prefix. If s doesn't start with prefix, CutPrefix returns s, false. If prefix is the empty string, CutPrefix returns s, true. | :x: |
+| CutSuffix | CutSuffix returns s without the provided ending suffix string and reports whether it found the suffix. If s doesn't end with suffix, CutSuffix returns s, false. If suffix is the empty string, CutSuffix returns s, true. | :x: |
+| EqualsFold | EqualFold reports whether s and t, interpreted as UTF-8 strings, are equal under simple Unicode case-folding, which is a more general form of case-insensitivity. | ✔️ |
+| Fields | Fields splits the string s around each instance of one or more consecutive white space characters, as defined by unicode.IsSpace, returning a slice of substrings of s or an empty slice if s contains only white space. | ✔️ |
+| FieldsFunc | FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c) and returns an array of slices of s. If all code points in s satisfy f(c) or the string is empty, an empty slice is returned. | :x: |
+| HasPrefix | HasPrefix tests whether the string s begins with prefix. | :x: |
+| HasSuffix | HasSuffix tests whether the string s ends with suffix. | :x: |
+| Index | Index returns the index of the first instance of substr in s, or -1 if substr is not present in s. | :x: |
+| IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: |
+| IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. | :x: |
+| IndexFunc | IndexFunc returns the index into s of the first Unicode code point satisfying f(c), or -1 if none do. | :x: |
+| IndexRune| IndexRune returns the index of the first instance of the Unicode code point r, or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first instance of any invalid UTF-8 byte sequence. | :x: |
+| Join | Join concatenates the elements of its first argument to create a single string. The separator string sep is placed between elements in the resulting string. | ✔️ |
+| LastIndex | LastIndex returns the index of the last instance of substr in s, or -1 if substr is not present in s. | :x: |
+| LastIndexAny | LastIndexAny returns the index of the last instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: | 
+| LastIndexFunc | LastIndexFunc returns the index into s of the last Unicode code point satisfying f(c), or -1 if none do. | :x: |
+| Map | Map returns a copy of the string s with all its characters modified according to the mapping function. If mapping returns a negative value, the character is dropped from the string with no replacement. | :x: |
+| Repeat | Repeat returns a new string consisting of count copies of the string s. | :x: |
+| Replace | Replace returns a copy of the string s with the first n non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. If n < 0, there is no limit on the number of replacements. | :x: |
+| ReplaceAll | ReplaceAll returns a copy of the string s with all non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. | ✔️ |
+| Split | Split slices s into all substrings separated by sep and returns a slice of the substrings between those separators. | ✔️ |
+| SplitAfter | SplitAfter slices s into all substrings after each instance of sep and returns a slice of those substrings. | :x: |
+| SplitAfterN | SplitAfterN slices s into substrings after each instance of sep and returns a slice of those substrings. | :x: |
+| SplitN | SplitN slices s into substrings separated by sep and returns a slice of the substrings between those separators. | :x: |
+| ToLower | ToLower returns s with all Unicode letters mapped to their lower case. | :x: |
+| ToLowerSpecial | ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to their lower case using the case mapping specified by c. | :x: |
+| ToTitle | ToTitle returns a copy of the string s with all Unicode letters mapped to their Unicode title case. | :x: |
+| ToTitleSpecial | ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to their Unicode title case, giving priority to the special casing rules. | :x: |
+| ToUpper | ToUpper returns s with all Unicode letters mapped to their upper case. | :x: |
+| ToUpperSpecial | ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their upper case using the case mapping specified by c. | :x: |
+| ToValidUTF8 | ToValidUTF8 returns a copy of the string s with each run of invalid UTF-8 byte sequences replaced by the replacement string, which may be empty. | :x: |
+| Trim | Trim returns a slice of the string s with all leading and trailing Unicode code points contained in cutset removed. | :x: |
