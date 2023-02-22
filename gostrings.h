@@ -91,3 +91,37 @@ int go_count(const char *s, const char *substr) {
 
     return count;
 }
+
+//Similiar to Go Lang "Join" Function
+//If you have an array, you can merge it all into a string
+//      const char* strings[] = {"apple", "orange", "banana", "grape"};
+//      char* result = join_strings(strings, " ");
+//      printf("Result: %s\n", result); -> "Result: apple orange banana grape"
+char* join(const char** strings, const char* delimiter) {
+    size_t num_strings = sizeof(strings)/2;
+    
+    size_t total_length = 0;
+    for (size_t i = 0; i < num_strings; i++) {
+        total_length += strlen(strings[i]);
+        if (i < num_strings - 1) {
+            total_length += strlen(delimiter);
+        }
+    }
+    
+    char* result = malloc(total_length + 1);
+    if (result == NULL) {
+        return NULL;
+    }
+    
+    size_t position = 0;
+    for (size_t i = 0; i < num_strings; i++) {
+        strcpy(result + position, strings[i]);
+        position += strlen(strings[i]);
+        if (i < num_strings - 1) {
+            strcpy(result + position, delimiter);
+            position += strlen(delimiter);
+        }
+    }
+    
+    return result;
+}
