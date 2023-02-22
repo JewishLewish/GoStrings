@@ -16,8 +16,8 @@ C package designed to be similar to GO's strings library
 | EqualsFold | EqualFold reports whether s and t, interpreted as UTF-8 strings, are equal under simple Unicode case-folding, which is a more general form of case-insensitivity. | ✔️ |
 | Fields | Fields splits the string s around each instance of one or more consecutive white space characters, as defined by unicode.IsSpace, returning a slice of substrings of s or an empty slice if s contains only white space. | ✔️ |
 | FieldsFunc | FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c) and returns an array of slices of s. If all code points in s satisfy f(c) or the string is empty, an empty slice is returned. | :x: |
-| HasPrefix | HasPrefix tests whether the string s begins with prefix. | :x: |
-| HasSuffix | HasSuffix tests whether the string s ends with suffix. | :x: |
+| HasPrefix | HasPrefix tests whether the string s begins with prefix. | ✔️ |
+| HasSuffix | HasSuffix tests whether the string s ends with suffix. | ✔️ |
 | Index | Index returns the index of the first instance of substr in s, or -1 if substr is not present in s. | :x: |
 | IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: |
 | IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. | :x: |

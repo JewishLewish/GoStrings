@@ -3,11 +3,11 @@
 
 int main() {
     const char* str = "hello world";
-    const char* substr = "world";
-    if (contains(str, substr)) {
-        printf("'%s' contains '%s'\n", str, substr);
+    const char* suffix = "world";
+    if (has_suffix(str, suffix)) {
+        printf("'%s' has suffix '%s'\n", str, suffix);
     } else {
-        printf("'%s' does not contain '%s'\n", str, substr);
+        printf("'%s' does not have suffix '%s'\n", str, suffix);
     }
     return 0;
 }

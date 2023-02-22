@@ -133,3 +133,22 @@ bool contains(const char* str, const char* substr) {
     }
     return false;
 }
+
+
+//Prefix and Suffix
+bool has_prefix(const char* str, const char* prefix) {
+    size_t prefix_len = strlen(prefix);
+    if (strlen(str) < prefix_len) {
+        return false;
+    }
+    return strncmp(str, prefix, prefix_len) == 0;
+}
+
+bool has_suffix(const char* str, const char* suffix) {
+    size_t str_len = strlen(str);
+    size_t suffix_len = strlen(suffix);
+    if (str_len < suffix_len) {
+        return false;
+    }
+    return strncmp(str + str_len - suffix_len, suffix, suffix_len) == 0;
+}
