@@ -18,7 +18,7 @@ C package designed to be similar to GO's strings library
 | FieldsFunc | FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c) and returns an array of slices of s. If all code points in s satisfy f(c) or the string is empty, an empty slice is returned. | :x: |
 | HasPrefix | HasPrefix tests whether the string s begins with prefix. | ✔️ |
 | HasSuffix | HasSuffix tests whether the string s ends with suffix. | ✔️ |
-| Index | Index returns the index of the first instance of substr in s, or -1 if substr is not present in s. | :x: |
+| Index | Index returns the index of the first instance of substr in s, or -1 if substr is not present in s. | ✔️ |
 | IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: |
 | IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. | :x: |
 | IndexFunc | IndexFunc returns the index into s of the first Unicode code point satisfying f(c), or -1 if none do. | :x: |

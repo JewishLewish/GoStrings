@@ -152,3 +152,12 @@ bool has_suffix(const char* str, const char* suffix) {
     }
     return strncmp(str + str_len - suffix_len, suffix, suffix_len) == 0;
 }
+
+//Index
+int go_index(char* str, char* substr) {
+    char* p = strstr(str, substr);
+    if (p == NULL) {
+        return -1;
+    }
+    return p - str;
+}
