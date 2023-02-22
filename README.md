@@ -35,11 +35,11 @@ C package designed to be similar to GO's strings library
 | SplitAfter | SplitAfter slices s into all substrings after each instance of sep and returns a slice of those substrings. | :x: |
 | SplitAfterN | SplitAfterN slices s into substrings after each instance of sep and returns a slice of those substrings. | :x: |
 | SplitN | SplitN slices s into substrings separated by sep and returns a slice of the substrings between those separators. | :x: |
-| ToLower | ToLower returns s with all Unicode letters mapped to their lower case. | :x: |
+| ToLower | ToLower returns s with all Unicode letters mapped to their lower case. <br> * = already apart of ``ctypes.h`` | \*✔️ |
 | ToLowerSpecial | ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to their lower case using the case mapping specified by c. | :x: |
 | ToTitle | ToTitle returns a copy of the string s with all Unicode letters mapped to their Unicode title case. | :x: |
 | ToTitleSpecial | ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to their Unicode title case, giving priority to the special casing rules. | :x: |
-| ToUpper | ToUpper returns s with all Unicode letters mapped to their upper case. | :x: |
+| ToUpper | ToUpper returns s with all Unicode letters mapped to their upper case.<br> * = already apart of ``ctypes.h`` | \*✔️ |
 | ToUpperSpecial | ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their upper case using the case mapping specified by c. | :x: |
 | ToValidUTF8 | ToValidUTF8 returns a copy of the string s with each run of invalid UTF-8 byte sequences replaced by the replacement string, which may be empty. | :x: |
 | Trim | Trim returns a slice of the string s with all leading and trailing Unicode code points contained in cutset removed. | :x: |
