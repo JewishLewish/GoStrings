@@ -6,7 +6,7 @@ C package designed to be similar to GO's strings library
 | --- | --- | :---: |
 | Clone | Returns a Fresh Copy of a Certain String | :x: |
 | Compare | Compare returns an integer comparing two strings lexicographically. The result will be 0 if a == b, -1 if a < b, and +1 if a > b. | :x: |
-| Contains | Contains reports whether substr is within s. | :x: |
+| Contains | Contains reports whether substr is within s. | ✔️ |
 | ContainsAny| ContainsAny reports whether any Unicode code points in chars are within s.| :x: |
 | ContainsRunes | ContainsRune reports whether the Unicode code point r is within s. | :x: |
 | Count | Count counts the number of non-overlapping instances of substr in s. If substr is an empty string, Count returns 1 + the number of Unicode code points in s.| ✔️ |

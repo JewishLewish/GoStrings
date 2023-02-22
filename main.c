@@ -2,13 +2,12 @@
 
 
 int main() {
-    const char* str = "HELLO WORLD";
-    char* lowercase_str = toLowerCase(str);
-    if (lowercase_str == NULL) {
-        printf("Error allocating memory\n");
-        return 1;
+    const char* str = "hello world";
+    const char* substr = "world";
+    if (contains(str, substr)) {
+        printf("'%s' contains '%s'\n", str, substr);
+    } else {
+        printf("'%s' does not contain '%s'\n", str, substr);
     }
-    printf("%s\n", lowercase_str);
-    free(lowercase_str);
     return 0;
 }
