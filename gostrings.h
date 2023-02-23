@@ -175,12 +175,40 @@ int last_index_of(char* str, char* substr) {
 
 //Cloning System
 
-char* Clone(const char* str) {
-    size_t len = strlen(str);
-    char* clone = malloc(len + 1);
-    if (clone == NULL) {
-        return NULL;
+#define MAX_CLONES 1000
+#define MAX_LENGTH 100
+
+struct gc_info {
+    void *ptr;
+};
+
+struct gc_info gc_ptrs[MAX_CLONES];
+int num_clones = 0;
+
+void *Clone(const char *str) {
+    // Allocate enough memory for the new string
+    char* new_str = (char*)malloc((strlen(str) + 1));
+    strcpy(new_str, str);
+
+
+    // Allocate a new gc_info struct and register both the new clone and the original string
+    struct gc_info info;
+    //printf("Allocating this to: %p\n", new_str);
+    info.ptr = new_str;
+    gc_ptrs[num_clones++] = info;
+
+    // Return the new string
+    return new_str;
+}
+
+void clone_collect() {
+    // Free all of the cloned strings and original strings
+    for (int i = 0; i < num_clones; i++) {
+        //printf("Freeing up %p\n", gc_ptrs[i].ptr);
+        free(gc_ptrs[i].ptr);
+        gc_ptrs[i].ptr = NULL; // Reset the pointer in the gc_info struct
     }
-    strcpy(clone, str);
-    return clone;
+
+    // Reset the clone and gc_ptrs arrays and count
+    num_clones = 0;
 }
