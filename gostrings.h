@@ -172,3 +172,15 @@ int last_index_of(char* str, char* substr) {
     }
     return last_index;
 }
+
+//Cloning System
+
+char* Clone(const char* str) {
+    size_t len = strlen(str);
+    char* clone = malloc(len + 1);
+    if (clone == NULL) {
+        return NULL;
+    }
+    strcpy(clone, str);
+    return clone;
+}
