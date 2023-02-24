@@ -25,7 +25,7 @@ C package designed to be similar to GO's strings library
 | IndexRune| IndexRune returns the index of the first instance of the Unicode code point r, or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first instance of any invalid UTF-8 byte sequence. <br> ``You Can Use Index`` | ⬆️ |
 | Join | Join concatenates the elements of its first argument to create a single string. The separator string sep is placed between elements in the resulting string. | ✔️ |
 | LastIndex | LastIndex returns the index of the last instance of substr in s, or -1 if substr is not present in s. | ✔️ |
-| LastIndexAny | LastIndexAny returns the index of the last instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: | 
+| LastIndexAny | LastIndexAny returns the index of the last instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. <br> ``You Can Use LastIndex`` | ⬆️ |
 | LastIndexFunc | LastIndexFunc returns the index into s of the last Unicode code point satisfying f(c), or -1 if none do. | :x: |
 | Map | Map returns a copy of the string s with all its characters modified according to the mapping function. If mapping returns a negative value, the character is dropped from the string with no replacement. | :x: |
 | Repeat | Repeat returns a new string consisting of count copies of the string s. | :x: |
