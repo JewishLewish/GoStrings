@@ -7,8 +7,8 @@ C package designed to be similar to GO's strings library
 | Clone | Returns a Fresh Copy of a Certain String | ✔️ |
 | Compare | Compare returns an integer comparing two strings lexicographically. The result will be 0 if a == b, -1 if a < b, and +1 if a > b. | ✔️ |
 | Contains | Contains reports whether substr is within s. | ✔️ |
-| ContainsAny| ContainsAny reports whether any Unicode code points in chars are within s.| :x: |
-| ContainsRunes | ContainsRune reports whether the Unicode code point r is within s. | :x: |
+| ContainsAny| ContainsAny reports whether any Unicode code points in chars are within s. <br> ``Contains can be used``| ⬆️ |
+| ContainsRunes | ContainsRune reports whether the Unicode code point r is within s. <br> ``Contains can be used`` | ⬆️ |
 | Count | Count counts the number of non-overlapping instances of substr in s. If substr is an empty string, Count returns 1 + the number of Unicode code points in s.| ✔️ |
 | Cut | Cut slices s around the first instance of sep, returning the text before and after sep. The found result reports whether sep appears in s. If sep does not appear in s, cut returns s, "", false. | ✔️ |
 | CutPrefix | CutPrefix returns s without the provided leading prefix string and reports whether it found the prefix. If s doesn't start with prefix, CutPrefix returns s, false. If prefix is the empty string, CutPrefix returns s, true. | ✔️ |
@@ -19,13 +19,13 @@ C package designed to be similar to GO's strings library
 | HasPrefix | HasPrefix tests whether the string s begins with prefix. | ✔️ |
 | HasSuffix | HasSuffix tests whether the string s ends with suffix. | ✔️ |
 | Index | Index returns the index of the first instance of substr in s, or -1 if substr is not present in s. | ✔️ |
-| IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: |
-| IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. | :x: |
+| IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. <br> ``You Can Use Index`` | ⬆️ |
+| IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. <br> ``You Can Use Index`` | ⬆️ |
 | IndexFunc | IndexFunc returns the index into s of the first Unicode code point satisfying f(c), or -1 if none do. | :x: |
-| IndexRune| IndexRune returns the index of the first instance of the Unicode code point r, or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first instance of any invalid UTF-8 byte sequence. | :x: |
+| IndexRune| IndexRune returns the index of the first instance of the Unicode code point r, or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first instance of any invalid UTF-8 byte sequence. <br> ``You Can Use Index`` | ⬆️ |
 | Join | Join concatenates the elements of its first argument to create a single string. The separator string sep is placed between elements in the resulting string. | ✔️ |
 | LastIndex | LastIndex returns the index of the last instance of substr in s, or -1 if substr is not present in s. | ✔️ |
-| LastIndexAny | LastIndexAny returns the index of the last instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: | 
+| LastIndexAny | LastIndexAny returns the index of the last instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. <br> ``You Can Use LastIndex`` | ⬆️ |
 | LastIndexFunc | LastIndexFunc returns the index into s of the last Unicode code point satisfying f(c), or -1 if none do. | :x: |
 | Map | Map returns a copy of the string s with all its characters modified according to the mapping function. If mapping returns a negative value, the character is dropped from the string with no replacement. | :x: |
 | Repeat | Repeat returns a new string consisting of count copies of the string s. | ✔️ |
