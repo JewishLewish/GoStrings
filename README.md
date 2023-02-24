@@ -11,8 +11,8 @@ C package designed to be similar to GO's strings library
 | ContainsRunes | ContainsRune reports whether the Unicode code point r is within s. | :x: |
 | Count | Count counts the number of non-overlapping instances of substr in s. If substr is an empty string, Count returns 1 + the number of Unicode code points in s.| ✔️ |
 | Cut | Cut slices s around the first instance of sep, returning the text before and after sep. The found result reports whether sep appears in s. If sep does not appear in s, cut returns s, "", false. | ✔️ |
-| CutPrefix | CutPrefix returns s without the provided leading prefix string and reports whether it found the prefix. If s doesn't start with prefix, CutPrefix returns s, false. If prefix is the empty string, CutPrefix returns s, true. | :x: |
-| CutSuffix | CutSuffix returns s without the provided ending suffix string and reports whether it found the suffix. If s doesn't end with suffix, CutSuffix returns s, false. If suffix is the empty string, CutSuffix returns s, true. | :x: |
+| CutPrefix | CutPrefix returns s without the provided leading prefix string and reports whether it found the prefix. If s doesn't start with prefix, CutPrefix returns s, false. If prefix is the empty string, CutPrefix returns s, true. | ✔️ |
+| CutSuffix | CutSuffix returns s without the provided ending suffix string and reports whether it found the suffix. If s doesn't end with suffix, CutSuffix returns s, false. If suffix is the empty string, CutSuffix returns s, true. | ✔️ |
 | EqualsFold | EqualFold reports whether s and t, interpreted as UTF-8 strings, are equal under simple Unicode case-folding, which is a more general form of case-insensitivity. | ✔️ |
 | Fields | Fields splits the string s around each instance of one or more consecutive white space characters, as defined by unicode.IsSpace, returning a slice of substrings of s or an empty slice if s contains only white space. | ✔️ |
 | FieldsFunc | FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c) and returns an array of slices of s. If all code points in s satisfy f(c) or the string is empty, an empty slice is returned. | :x: |
@@ -42,4 +42,4 @@ C package designed to be similar to GO's strings library
 | ToUpper | ToUpper returns s with all Unicode letters mapped to their upper case.<br> * = already apart of ``ctypes.h`` | \*✔️ |
 | ToUpperSpecial | ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their upper case using the case mapping specified by c. | :x: |
 | ToValidUTF8 | ToValidUTF8 returns a copy of the string s with each run of invalid UTF-8 byte sequences replaced by the replacement string, which may be empty. | :x: |
-| Trim | Trim returns a slice of the string s with all leading and trailing Unicode code points contained in cutset removed. | :x: |
+| Trim | Trim returns a slice of the string s with all leading and trailing Unicode code points contained in cutset removed. | ✔️ |

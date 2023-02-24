@@ -246,3 +246,64 @@ char* cut(char *str, char *sep) {
   result[pos] = '\0';
   return result;
 }
+
+char* cut_suffix(char *str, char *suffix) {
+  int len_str = strlen(str);
+  int len_suffix = strlen(suffix);
+  if (len_suffix > len_str) {
+    return strdup(str);
+  }
+  if (strncmp(str + len_str - len_suffix, suffix, len_suffix) == 0) {
+    char *result = malloc(len_str - len_suffix + 1);
+    if (result == NULL) {
+      fprintf(stderr, "Error: memory allocation failed\n");
+      exit(EXIT_FAILURE);
+    }
+    strncpy(result, str, len_str - len_suffix);
+    result[len_str - len_suffix] = '\0';
+    return result;
+  } else {
+    return strdup(str);
+  }
+}
+
+char* cut_prefix(char *str, char *prefix) {
+  int len_str = strlen(str);
+  int len_prefix = strlen(prefix);
+  if (len_prefix > len_str) {
+    return strdup(str);
+  }
+  if (strncmp(str, prefix, len_prefix) == 0) {
+    char *result = malloc(len_str - len_prefix + 1);
+    if (result == NULL) {
+      fprintf(stderr, "Error: memory allocation failed\n");
+      exit(EXIT_FAILURE);
+    }
+    strncpy(result, str + len_prefix, len_str - len_prefix);
+    result[len_str - len_prefix] = '\0';
+    return result;
+  } else {
+    return strdup(str);
+  }
+}
+
+char* trim(char *str, char *chars) {
+  int len_str = strlen(str);
+  int len_chars = strlen(chars);
+  int start = 0;
+  int end = len_str - 1;
+  while (start <= end && strchr(chars, str[start]) != NULL) {
+    start++;
+  }
+  while (end >= start && strchr(chars, str[end]) != NULL) {
+    end--;
+  }
+  char *result = malloc(end - start + 2);
+  if (result == NULL) {
+    fprintf(stderr, "Error: memory allocation failed\n");
+    exit(EXIT_FAILURE);
+  }
+  strncpy(result, str + start, end - start + 1);
+  result[end - start + 1] = '\0';
+  return result;
+}
