@@ -307,3 +307,36 @@ char* trim(char *str, char *chars) {
   result[end - start + 1] = '\0';
   return result;
 }
+
+char *repeat(char *s, int count) {
+    int len = strlen(s);
+    int totalLen = len * count;
+    char *result = malloc(totalLen + 1);
+    if (!result) {
+        return NULL;
+    }
+    for (int i = 0; i < count; i++) {
+        memcpy(result + i * len, s, len);
+    }
+    result[totalLen] = '\0';
+    return result;
+}
+
+char *replace(char *s, char *old, char *new) {
+    char *result = NULL;
+    char *p = strstr(s, old);  // find the first occurrence of old in s
+    if (p != NULL) {
+        int old_len = strlen(old);
+        int new_len = strlen(new);
+        int prefix_len = p - s;  // length of the prefix before the old substring
+        int result_len = prefix_len + new_len + strlen(p + old_len);  // total length of the result string
+        result = (char *) malloc((result_len + 1) * sizeof(char));
+        if (result != NULL) {
+            strncpy(result, s, prefix_len);  // copy the prefix
+            strncpy(result + prefix_len, new, new_len);  // copy the new substring
+            strncpy(result + prefix_len + new_len, p + old_len, strlen(p + old_len));  // copy the rest of s after the old substring
+            result[result_len] = '\0';  // null terminate the string
+        }
+    }
+    return result;
+}

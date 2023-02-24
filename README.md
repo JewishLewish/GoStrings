@@ -28,8 +28,8 @@ C package designed to be similar to GO's strings library
 | LastIndexAny | LastIndexAny returns the index of the last instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: | 
 | LastIndexFunc | LastIndexFunc returns the index into s of the last Unicode code point satisfying f(c), or -1 if none do. | :x: |
 | Map | Map returns a copy of the string s with all its characters modified according to the mapping function. If mapping returns a negative value, the character is dropped from the string with no replacement. | :x: |
-| Repeat | Repeat returns a new string consisting of count copies of the string s. | :x: |
-| Replace | Replace returns a copy of the string s with the first n non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. If n < 0, there is no limit on the number of replacements. | :x: |
+| Repeat | Repeat returns a new string consisting of count copies of the string s. | ✔️ |
+| Replace | Replace returns a copy of the string s with the first n non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. If n < 0, there is no limit on the number of replacements. | ✔️ |
 | ReplaceAll | ReplaceAll returns a copy of the string s with all non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. | ✔️ |
 | Split | Split slices s into all substrings separated by sep and returns a slice of the substrings between those separators. | ✔️ |
 | SplitAfter | SplitAfter slices s into all substrings after each instance of sep and returns a slice of those substrings. | :x: |
