@@ -1,4 +1,3 @@
-
 #ifndef GOSTRINGS_H
 #define GOSTRINGS_H
 
