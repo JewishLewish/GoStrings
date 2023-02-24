@@ -19,8 +19,8 @@ C package designed to be similar to GO's strings library
 | HasPrefix | HasPrefix tests whether the string s begins with prefix. | ✔️ |
 | HasSuffix | HasSuffix tests whether the string s ends with suffix. | ✔️ |
 | Index | Index returns the index of the first instance of substr in s, or -1 if substr is not present in s. | ✔️ |
-| IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | :x: |
-| IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. | :x: |
+| IndexAny | IndexAny returns the index of the first instance of any Unicode code point from chars in s, or -1 if no Unicode code point from chars is present in s. | ⬆️ |
+| IndexByte | IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s. | ⬆️ |
 | IndexFunc | IndexFunc returns the index into s of the first Unicode code point satisfying f(c), or -1 if none do. | :x: |
 | IndexRune| IndexRune returns the index of the first instance of the Unicode code point r, or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first instance of any invalid UTF-8 byte sequence. | :x: |
 | Join | Join concatenates the elements of its first argument to create a single string. The separator string sep is placed between elements in the resulting string. | ✔️ |
