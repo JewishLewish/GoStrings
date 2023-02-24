@@ -1,6 +1,16 @@
 # GoStrings
 C package designed to be similar to GO's strings library
 
+
+## Compiling
+```
+gcc gostrings.c <filename>.c
+```
+
+## Documentation
+https://github.com/JewishLewish/GoStrings/wiki/Documentation
+
+
 ## Progress
 | Syntax | Description | Progress |
 | --- | --- | :---: |
