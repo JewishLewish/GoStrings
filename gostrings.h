@@ -174,7 +174,7 @@ int last_index_of(char* str, char* substr) {
 }
 
 //Cloning System
-
+//Clone has the unique ability to d
 #define MAX_CLONES 1000
 #define MAX_LENGTH 100
 
@@ -211,4 +211,38 @@ void clone_collect() {
 
     // Reset the clone and gc_ptrs arrays and count
     num_clones = 0;
+}
+
+int compare(char *s1, char *s2) {
+  int result = strcmp(s1, s2);
+  if (result < 0) {
+    return -1;
+  } else if (result > 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+char* cut(char *str, char *sep) {
+  char *result = malloc(strlen(str) + 1);
+  if (result == NULL) {
+    fprintf(stderr, "Error: memory allocation failed\n");
+    exit(EXIT_FAILURE);
+  }
+  int len_sep = strlen(sep);
+  int pos = 0;
+  char *token = strtok(str, sep);
+  while (token != NULL) {
+    int len_token = strlen(token);
+    strncpy(result + pos, token, len_token);
+    pos += len_token;
+    token = strtok(NULL, sep);
+    if (token != NULL) {
+      strncpy(result + pos, "", len_sep);
+      pos += len_sep;
+    }
+  }
+  result[pos] = '\0';
+  return result;
 }
