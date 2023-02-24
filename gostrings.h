@@ -340,3 +340,45 @@ char *replace(char *s, char *old, char *new) {
     }
     return result;
 }
+
+char *toLower(char *s) {
+    char *result = malloc(strlen(s) + 1);
+    if (result != NULL) {
+        for (int i = 0; s[i]; i++) {
+            result[i] = tolower(s[i]);
+        }
+        result[strlen(s)] = '\0';
+    }
+    return result;
+}
+
+char *toUpper(char *s) {
+    char *result = malloc(strlen(s) + 1);
+    if (result != NULL) {
+        for (int i = 0; s[i]; i++) {
+            result[i] = toupper(s[i]);
+        }
+        result[strlen(s)] = '\0';
+    }
+    return result;
+}
+
+char *toTitle(char *s) {
+    char *result = malloc(strlen(s) + 1);
+    if (result == NULL) {
+        return NULL;
+    }
+    int i = 0;
+    int isFirstChar = 1;
+    while (s[i] != '\0') {
+        if (isFirstChar || !isalpha(s[i-1])) {
+            result[i] = toupper(s[i]);
+        } else {
+            result[i] = tolower(s[i]);
+        }
+        isFirstChar = isspace(s[i]);
+        i++;
+    }
+    result[i] = '\0';
+    return result;
+}
