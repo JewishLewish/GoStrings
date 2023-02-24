@@ -32,14 +32,14 @@ C package designed to be similar to GO's strings library
 | Replace | Replace returns a copy of the string s with the first n non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. If n < 0, there is no limit on the number of replacements. | ✔️ |
 | ReplaceAll | ReplaceAll returns a copy of the string s with all non-overlapping instances of old replaced by new. If old is empty, it matches at the beginning of the string and after each UTF-8 sequence, yielding up to k+1 replacements for a k-rune string. | ✔️ |
 | Split | Split slices s into all substrings separated by sep and returns a slice of the substrings between those separators. | ✔️ |
-| SplitAfter | SplitAfter slices s into all substrings after each instance of sep and returns a slice of those substrings. | :x: |
-| SplitAfterN | SplitAfterN slices s into substrings after each instance of sep and returns a slice of those substrings. | :x: |
-| SplitN | SplitN slices s into substrings separated by sep and returns a slice of the substrings between those separators. | :x: |
+| SplitAfter | SplitAfter slices s into all substrings after each instance of sep and returns a slice of those substrings. | ✔️ |
+| SplitAfterN | SplitAfterN slices s into substrings after each instance of sep and returns a slice of those substrings. | ✔️ |
+| SplitN | SplitN slices s into substrings separated by sep and returns a slice of the substrings between those separators. | ✔️ |
 | ToLower | ToLower returns s with all Unicode letters mapped to their lower case. | ✔️ |
-| ToLowerSpecial | ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to their lower case using the case mapping specified by c. <br> ``Use ToLower()`` | ✔️ |
+| ToLowerSpecial | ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to their lower case using the case mapping specified by c. <br> ``Use ToLower()`` | ⬆️ |
 | ToTitle | ToTitle returns a copy of the string s with all Unicode letters mapped to their Unicode title case. | ✔️ |
-| ToTitleSpecial | ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to their Unicode title case, giving priority to the special casing rules. <br> ``Use ToLower()`` | ✔️ |
+| ToTitleSpecial | ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to their Unicode title case, giving priority to the special casing rules. <br> ``Use ToTitle()`` | ⬆️ |
 | ToUpper | ToUpper returns s with all Unicode letters mapped to their upper case. | ✔️ |
-| ToUpperSpecial | ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their upper case using the case mapping specified by c. <br> ``Use ToUpper()`` | ✔️ |
+| ToUpperSpecial | ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their upper case using the case mapping specified by c. <br> ``Use ToUpper()`` | ⬆️ |
 | ToValidUTF8 | ToValidUTF8 returns a copy of the string s with each run of invalid UTF-8 byte sequences replaced by the replacement string, which may be empty. | :x: |
 | Trim | Trim returns a slice of the string s with all leading and trailing Unicode code points contained in cutset removed. | ✔️ |

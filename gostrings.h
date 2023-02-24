@@ -25,6 +25,153 @@ char **split(char *str, const char *delim, int *count) {
     return result;
 }
 
+char **split_after(const char *str, const char *sep, int *count) {
+    int sep_len = strlen(sep);
+    int str_len = strlen(str);
+    char *p = (char *) str;
+    int n = 0;
+    while ((p = strstr(p, sep)) != NULL) {
+        n++;
+        p += sep_len;
+    }
+    *count = n + 1;
+    char **result = (char **) malloc((*count) * sizeof(char *));
+    if (result == NULL) {
+        return NULL;
+    }
+    int i = 0;
+    p = (char *) str;
+    while ((p = strstr(p, sep)) != NULL) {
+        int len = p - str + sep_len;
+        result[i] = (char *) malloc(len + 1);
+        if (result[i] == NULL) {
+            for (int j = 0; j < i; j++) {
+                free(result[j]);
+            }
+            free(result);
+            return NULL;
+        }
+        strncpy(result[i], str, len);
+        result[i][len] = '\0';
+        i++;
+        p += sep_len;
+        str += len;
+        str_len -= len;
+    }
+    result[i] = (char *) malloc(str_len + 1);
+    if (result[i] == NULL) {
+        for (int j = 0; j <= i; j++) {
+            free(result[j]);
+        }
+        free(result);
+        return NULL;
+    }
+    strcpy(result[i], str);
+    return result;
+}
+
+char **split_after_n(const char *str, const char *sep, int n, int *count) {
+    int sep_len = strlen(sep);
+    int str_len = strlen(str);
+    char *p = (char *) str;
+    int m = 0;
+    while (m < n - 1) {
+        p = strstr(p, sep);
+        if (p == NULL) {
+            break;
+        }
+        p += sep_len;
+        m++;
+    }
+    *count = m + 1;
+    char **result = (char **) malloc((*count) * sizeof(char *));
+    if (result == NULL) {
+        return NULL;
+    }
+    int i = 0;
+    if (m == n - 1) {
+        char *q = strstr(p, sep);
+        if (q != NULL) {
+            q = '\0';
+        }
+    }
+    while ((i < m) && ((p = strstr(p, sep)) != NULL)) {
+        int len = p - str + sep_len;
+        result[i] = (char *) malloc(len + 1);
+        if (result[i] == NULL) {
+            for (int j = 0; j < i; j++) {
+                free(result[j]);
+            }
+            free(result);
+            return NULL;
+        }
+        strncpy(result[i], str, len);
+        result[i][len] = '\0';
+        i++;
+        p += sep_len;
+        str += len;
+        str_len -= len;
+    }
+    result[i] = (char *) malloc(str_len + 1);
+    if (result[i] == NULL) {
+        for (int j = 0; j <= i; j++) {
+            free(result[j]);
+        }
+        free(result);
+        return NULL;
+    }
+    strcpy(result[i], str);
+    return result;
+}
+
+char **split_n(const char *str, const char *sep, int n, int *count) {
+    if (n < 1) {
+        *count = 0;
+        return NULL;
+    }
+    char **result = malloc((n+1) * sizeof(char *));
+    if (result == NULL) {
+        *count = 0;
+        return NULL;
+    }
+    const char *p = str;
+    int m = 0;
+    while (*p != '\0' && m < n - 1) {
+        const char *q = strstr(p, sep);
+        if (q == NULL) {
+            break;
+        }
+        int len = q - p;
+        result[m] = malloc((len+1) * sizeof(char));
+        if (result[m] == NULL) {
+            for (int i = 0; i < m; i++) {
+                free(result[i]);
+            }
+            free(result);
+            *count = 0;
+            return NULL;
+        }
+        strncpy(result[m], p, len);
+        result[m][len] = '\0';
+        p = q + strlen(sep);
+        m++;
+    }
+    int len = strlen(p);
+    result[m] = malloc((len+1) * sizeof(char));
+    if (result[m] == NULL) {
+        for (int i = 0; i < m; i++) {
+            free(result[i]);
+        }
+        free(result);
+        *count = 0;
+        return NULL;
+    }
+    strcpy(result[m], p);
+    m++;
+    *count = m;
+    return result;
+}
+
 //Go Lang's "Fields" Function
 //Similiar to Split however it uses Whitespace as a form to split text
 //"Hello        world" -> {"Hello", "world"}
