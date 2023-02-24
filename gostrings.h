@@ -1,6 +1,6 @@
 
-#ifndef GO_STRINGS_H
-#define GO_STRINGS_H
+#ifndef GOSTRINGS_H
+#define GOSTRINGS_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,13 +36,6 @@ int index_of(char* str, char* substr);
 
 int last_index_of(char* str, char* substr);
 
-struct gc_info {
-    void *ptr;
-};
-
-extern struct gc_info gc_ptrs[MAX_CLONES];
-extern int num_clones;
-
 void *clone(const char *str);
 void clone_collect();
 
@@ -64,7 +57,7 @@ char *toLower(char *s);
 
 char *toUpper(char *s);
 
-char *toTitle(char *s)
+char *toTitle(char *s);
 
 
 #endif /* GO_STRINGS_H */

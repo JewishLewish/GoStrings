@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdbool.h>
 #include "gostrings.h"
 
 //The following functions are designed to be very similiar to Go Lang's functions
